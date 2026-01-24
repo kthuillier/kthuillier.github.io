@@ -1,0 +1,132 @@
+.profile-location {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Texte */
+.profile-text {
+  flex: 2;
+  text-align: justify;
+  margin-top: 0em;
+}
+
+/* Carte */
+.profile-map {
+  padding-top: 0.25em;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Carte responsive */
+.profile-map iframe {
+  width: 100%;
+  height: 250px;
+  min-width: 250px;
+  border: 0;
+}
+
+/* Mobile : empilé */
+@media (max-width: 1024px) {
+  .profile-location {
+    flex-direction: column;
+  }
+  .profile-map iframe {
+    display: none;
+  }
+}
+
+blockquote {
+  margin: 0;       /* removes vertical margin above and below */
+}
+
+.pdf-link i.fa-file-pdf {
+  color: #C8102E;       /* red like in your LaTeX CV */
+  margin-left: 0.25em;   /* small space before link */
+  font-size: 0.95em;     /* match text size */
+}
+.pdf-link i.fa-file-pdf:hover {
+  color: darkred;
+}
+
+.git-link i.fa-github {
+  color: #232925;       /* red like in your LaTeX CV */
+  margin-left: 0.25em;   /* small space before link */
+  font-size: 0.95em;     /* match text size */
+}
+.git-link i.fa-github:hover {
+  color: #101411;
+}
+
+.doi-link {
+  color: #232925;
+  font-family: monospace;  /* same as LaTeX \texttt */
+  font-size: 0.85em;       /* slightly smaller than body text */
+}
+.doi-link:hover {
+  color: #101411;
+  font-family: monospace;  /* same as LaTeX \texttt */
+  font-size: 0.85em;       /* slightly smaller than body text */
+}
+
+li.publication {
+  margin-bottom: 1.5em;
+}
+
+li.publication p {
+  margin-bottom: 0.25em;
+  text-align: justify;
+}
+
+li.publication p.publication-presentation {
+  margin-top: 0.25em;
+}
+
+div.artefact p {
+  margin-bottom: 0.5em;
+  text-align: justify;
+}
+
+div.artefact {
+  margin-bottom: 1.25em;
+}
+
+p.artefact-description {
+  border-left: 3px solid #ccc;   /* left vertical bar */
+  padding-left: 0.5em;           /* space between border and text */
+  margin-top: 0.25em;       /* top/bottom spacing */
+  padding-bottom: .25em;       /* top/bottom spacing */
+  font-size: 0.9em;              /* smaller font than main text */
+  line-height: 1.4;               /* readable line height */
+  text-align: justify;
+}
+
+details.show-abstract p {
+  border-left: 3px solid #ccc;   /* left vertical bar */
+  padding-left: 0.5em;           /* space between border and text */
+  margin: 0.4em 0 0.4em 0;       /* top/bottom spacing */
+  font-size: 0.9em;              /* smaller font than main text */
+  line-height: 1.4;               /* readable line height */
+  text-align: justify;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.tag {
+  font-family: monospace;
+}
+
+.publication-presentation {
+  border-left: 3px solid  #706f6f; /* or any highlight color */
+  background-color: #f5faff;       /* subtle highlight */
+  padding: 0.3em 0.6em;
+  margin: 0.6em 0 0.6em 0;
+  font-size: 0.95em;
+}
+
+footer {
+  color: #666666; /* your desired color */
+}

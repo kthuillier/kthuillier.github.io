@@ -1,0 +1,141 @@
+# ==============================================================================
+# 2021
+# ==============================================================================
+- year: 2021
+  month: 9
+  tag: Conference
+  authors: "Kerian Thuillier, Caroline Baroukh, Alexander Bockmayr, Ludovic Cottret, Loïc Paulevé, and Anne Siegel"
+  title: "Learning Boolean controls in regulated metabolic networks: a case-study"
+  venue: "CMSB 2021 - 19th International Conference on Computational Methods in Systems Biology, Springer"
+  extended_data: "pp.159-180"
+  doi: "10.1007/978-3-030-85633-5_10"
+  abstract: >
+    Many techniques have been developed to infer Boolean regulations from a prior knowledge network and experimental data.
+    Existing methods are able to reverse-engineer Boolean regulations for transcriptional and signaling networks, but they fail to infer regulations that control metabolic networks.
+    This paper provides a formalisation of the inference of regulations for metabolic networks as a satisﬁability problem with two levels of quantiﬁers, and introduces a method based on Answer Set Programming to solve this problem on a small-scale example.
+  links:
+    bib: "/files/publications/2021/conference_cmsb/2021_conference_cmsb.bib"
+    pdf: "/files/publications/2021/conference_cmsb/2021_conference_cmsb.pdf"
+    git: "https://github.com/bioasp/boolean-caspo-flux"
+  presentation:
+    name: "CMSB 2021"
+    place: "Bordeau, France"
+    links:
+      slide: "/files/talks/2021/cmsb_slides.pdf"
+      # video: x
+
+# ==============================================================================
+# 2022
+# ==============================================================================
+- year: 2022
+  month: 9
+  tag: Journal
+  authors: "Kerian Thuillier, Caroline Baroukh, Alexander Bockmayr, Ludovic Cottret, Loïc Paulevé, and Anne Siegel"
+  title: "MERRIN: MEtabolic Regulation Rule INference from time series data"
+  venue: "Bioinformatics"
+  extended_data: "38 (Supplement_2), pp.ii127-ii133"
+  doi: "10.1093/bioinformatics/btac479"
+  abstract: >
+    <strong>Motivations:</strong> Many techniques have been developed to infer Boolean regulations from a prior knowledge network (PKN) and experimental data.
+    Existing methods are able to reverse-engineer Boolean regulations for transcriptional and signaling networks, but they fail to infer regulations that control metabolic networks.</br>
+    <strong>Results:</strong> We present a novel approach to infer Boolean rules for metabolic regulation from time-series data and a PKN.
+    Our method is based on a combination of answer set programming and linear programming.
+    By solving both combinatorial and linear arithmetic constraints, we generate candidate Boolean regulations that can reproduce the given data when coupled to the metabolic network.
+    We evaluate our approach on a core regulated metabolic network and show how the quality of the predictions depends on the available kinetic, ﬂuxomics or transcriptomics
+    time-series data.
+  links:
+    bib: "/files/publications/2022/journal_bioinformatics-eccb/2022_journal_bioinformatics.bib"
+    pdf: "/files/publications/2022/journal_bioinformatics-eccb/2022_journal_bioinformatics.pdf"
+    git: "https://github.com/bioasp/merrin-covert"
+  presentation:
+    name: "ECCB 2022"
+    place: "Sitges, Spain"
+    links:
+      slide: "/files/talks/2022/ECCB_Talk_MERRIN_KerianThuillier.pdf"
+      # video: x
+
+# ==============================================================================
+# 2023
+# ==============================================================================
+
+# ==============================================================================
+# 2024
+# ==============================================================================
+- year: 2024
+  month: 2
+  tag: Conference
+  authors: "Kerian Thuillier, Anne Siegel, and Loïc Paulevé"
+  title: "CEGAR-Based Approach for Solving Combinatorial Optimization Modulo Quantified Linear Arithmetics Problems"
+  venue: "AAAI 2024 - The 38th Annual AAAI Conference on Artificial Intelligence"
+  extended_data: "pp.1-8"
+  doi: "10.1609/aaai.v38i8.28654 "
+  abstract: >
+    Bioinformatics has always been a proliﬁc domain for generating complex satisﬁability and optimization problems.
+    For instance, the synthesis of multi-scale models of biological networks has recently been associated with the resolution of optimization problems mixing Boolean logic and universally quantiﬁed linear constraints (OPT+qLP), which can be benchmarked on real-world models.
+    In this paper, we introduce a Counter-Example-Guided Abstraction Reﬁnement (CEGAR) to solve such problems efﬁciently.
+    Our CEGAR exploits monotone properties inherent to linear optimization in order to generalize counter-examples of Boolean relax ations.
+    We implemented our approach by extending Answer Set Programming (ASP) solver CLINGO with a quantiﬁed linear constraints propagator.
+    Our prototype enables exploiting independence of sub-formulas to further exploit the generalization of counter-examples.
+    We evaluate the impact of reﬁnement and partitioning on two sets of OPT+qLP problems inspired by system biology.
+    Additionally, we conducted a comparison with the state-of-the-art ASP solver Clingo[lpx] that handles non-quantiﬁed linear constraints, showing the advantage of our CEGAR approach for solving large problems.
+  links:
+    bib: "/files/publications/2024/conference_aaai/2024_conference_aaai.bib"
+    pdf: "/files/publications/2024/conference_aaai/2024_conference_aaai.pdf"
+    git: "https://github.com/kthuillier/merrinasp"
+  presentation:
+    name: "AAAI 2024"
+    place: "Vancouver, Canada"
+    links:
+      poster: "/files/talks/2024/AAAI_poster_KerianThuillier.pdf"
+
+- year: 2024
+  month: 9
+  tag: PhD Thesis
+  authors: "Kerian Thuillier"
+  title: "Hybrid satisfiability methods for the inference of boolean regulations controlling metabolic networks"
+  venue: "Université de Rennes"
+  abstract: >
+    Biological systems are complex multi-scale systems composed of many interconnected biological mechanisms.
+    These scales include the metabolism, which transforms nutrients into energy and biomass, and the regulatory system, which acts as a controller of metabolic activity.
+    Modeling the coupling of metabolism and regulation is difficult and requires integrating the differential-algebraic formalisms of metabolism with the discrete formalisms of regulation.
+    Although formalisms for simulating the hybrid dynamics of this coupling exist, no method allows for the synthesis of the controllers that regulate metabolic activity, that is, the regulatory rules.
+    This thesis presents three formulations of the synthesis problem as combinatorial optimization problems under logical and hybrid (logical and linear) quantified constraints.
+    A dedicated solving method is given for each formulation.
+    The first formulation is solved using satisfiability methods, while the other two rely on hybrid solving methods that integrate logical constraints and linear arithmetic.
+    In particular, the thesis presents a generic framework for solving combinatorial optimization problems under quantified linear constraints.
+    These formalizations have led to the development of two tools, MERRIN and MerrinASP, which extend Answer Set Programming (ASP) with quantified linear constraints.
+    This thesis also provides synthetic datasets that simulate different types of omics data, as well as the protocol used to generate them.
+  links:
+    bib: "/files/publications/2024/thesis/2024_thesis.bib"
+    pdf: "https://theses.hal.science/tel-04810903v1/document"
+  presentation:
+    name: "PhD Defense (27 September 2024)"
+    place: "Irisa - Rennes, France"
+    links:
+      slide: "/files/talks/2024/phd_defense.pdf"
+      # video: x
+
+# ==============================================================================
+# 2025
+# ==============================================================================
+- year: 2025
+  month: 11
+  tag: Invited Journal
+  authors: "Matthias Függer, Thomas Nowak, and Kerian Thuillier"
+  title: "Distributed Computing Inspired by Biology"
+  venue: "Seminars in Cell and Developmental Biology"
+  extended_data: "175, pp.103666"
+  doi: "10.1016/j.semcdb.2025.103666"
+  abstract: >
+    Biological systems are mastering the art of composing cells into colonies, tissues, and organisms.
+    This article reviews striking similarities and differences between such biological systems and distributed computing systems, where computational units are composed to form larger systems with the goal of increasing computational power, enhancing system robustness, or overcoming spatial distances.
+    A problem that recurs in many contexts in distributed systems is obtaining a consistent view of part of the system by its agents.
+    Such problems, known as agreement problems in distributed computing, have been extensively studied across different computational models, varying, for example, in the extent to which the network is stable or dynamic.
+    Motivated by the importance of agreement problems, we discuss examples ranging from simple to more complex cases, the latter in the context of optimization: agents solving graph optimization problems, searching for optima in arbitrary loss landscapes, and applying gradient-based techniques closely related to widely adopted artificial neural networks.
+    We then discuss the reverse direction: distributed systems implemented with biological material.
+    In particular, we detail a theoretical distributed computing model and algorithm targeted toward implementation in bacterial populations.
+    We conclude with an outlook on what we consider the beginning of a promising intersection between distributed computing and biology, highlighting opportunities for both understanding natural systems and engineering novel distributed systems, both biological and in silico.
+  links:
+    bib: "/files/publications/2025/journal_seminars-in-cell-and-developmental-biology/2025_journal_seminars-in-cell-and-developmental-biology.bib"
+    pdf: "/files/publications/2025/journal_seminars-in-cell-and-developmental-biology/2025_journal_seminars-in-cell-and-developmental-biology.pdf"
+    git: "https://github.com/BioDisCo/dc_bio"

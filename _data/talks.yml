@@ -1,0 +1,124 @@
+# ==============================================================================
+# 2020
+# ==============================================================================
+- tag: "Peer-Reviewed Abstract"
+  venue: "Session Optimisation Combinatoire pour la Bioinformatique, ROADEF"
+  place: "Montpellier"
+  date: "2020"
+  duration: "20min"
+  year: 2020
+  month: 21
+  title: "A MILP Approach for Genome Haplotyping"
+
+- tag: "Peer-Reviewed Abstract"
+  venue: "Session Optimisation Combinatoire pour la Bioinformatique, ROADEF"
+  place: "Montpellier"
+  date: "2020"
+  duration: "20min"
+  year: 2020
+  month: 2
+  title: "A MILP Approach for the Metabolic Network Completion Problem"
+
+# ==============================================================================
+# 2021
+# ==============================================================================
+
+# ==============================================================================
+# 2022
+# ==============================================================================
+- tag: "On Abstract"
+  venue: "GT-Bioss national days"
+  place: "Nantes"
+  date: "2022"
+  duration: "20min"
+  year: 2022
+  month: 1
+  title: "MERRIN: MEtabolic Regulation Rule INference from time series data"
+  links:
+    slide: "/files/talks/2022/journee_bioss_merrin.pdf"
+
+- tag: "Invited"
+  venue: "ASP days"
+  place: "LaBRI, Bordeaux"
+  date: "Nov. 2022"
+  duration: "20min"
+  year: 2022
+  month: 11
+  title: "Solving quantifier-free linear constraints in ASP"
+  links:
+    slide: "/files/talks/2022/aspdays_slides.pdf"
+
+# ==============================================================================
+# 2023
+# ==============================================================================
+- tag: "Peer-Reviewed Abstract"
+  venue: "Session Operational Research in Bioinformatics, ROADEF"
+  place: "Rennes"
+  date: "2023"
+  duration: "20min"
+  year: 2023
+  month: 1
+  title: "Satisfaction of Hybrid Optimization Problems Applied to Bioinformatics"
+  links:
+    slide: "/files/talks/2023/ROADEF23_Talk_MERRIN_KerianThuillier.pdf"
+  
+- tag: "Invited"
+  venue: "Weekly seminar of the Knowledge Representation and Reasoning group"
+  place: "University of Potsdam, Germany"
+  date: "2023"
+  duration: "1h"
+  year: 2023
+  month: 2
+  title: "Solving quantified linear constraints in ASP"
+  links:
+    slide: "/files/talks/2023/seminaire_postdam.pdf"
+    # video: x
+
+# ==============================================================================
+# 2024
+# ==============================================================================
+- tag: "On Abstract"
+  venue: "Workshop Modélisation du Métabolisme"
+  place: "Toulouse"
+  date: "2024"
+  duration: "20min"
+  year: 2024
+  month: 1
+  title: "Inférence de règles de régulation métabolique à partir de séries temporelles"
+  links:
+    slide: "/files/talks/2024/workshop_metabolism.pdf"
+    # video: x
+  
+- tag: "Invited"
+  place: "Laboratoire Méthodes Formelles (LMF), Gif-sur-Yvette"
+  date: "Dec. 2024"
+  duration: "1h"
+  year: 2024
+  month: 2
+  title: "Talking about my PhD results"
+  links:
+    slide: "/files/talks/2024/slides_seminaire_lis-lmf.pdf"
+
+- tag: "Invited"
+  place: "Laboratoire d'Informatique et des Systèmes (LIS), Marseille"
+  date: "Dec. 2024"
+  duration: "1h"
+  year: 2024
+  month: 3
+  title: "Talking about my PhD results"
+  links:
+    slide: "/files/talks/2024/slides_seminaire_lis-lmf.pdf"
+
+# ==============================================================================
+# 2025
+# ==============================================================================
+- tag: "Invited"
+  venue: "Agglometabiont Days"
+  place: "IRISA, Rennes"
+  date: "Dec. 2025"
+  duration: "20min"
+  year: 2025
+  month: 12
+  title: "Regulatory controls of bacteria metabolism"
+  links:
+    slide: "/files/talks/2025/agglometabiontes/agglometabiontes_slides.pdf"

@@ -1,0 +1,44 @@
+# ==============================================================================
+# Software
+# ==============================================================================
+- tag: Software
+  name: MerrinASP
+  description: >
+    Generic Answer Set Programming (ASP) solver for pseudo-Boolean optimization under logic and quantified linear arithmetic constraints (up to one level of quantifier).
+    It extends the ASP solver <a href="https://potassco.org/clingo/"><code>clingo</code></a> with quantified linear constraints and constraints partitioning.
+  links:
+    git: "https://github.com/kthuillier/merrinasp"
+
+- tag: Software
+  name: Merrin
+  description: >
+    Tools for the inference of Boolean regulatory rules controlling the cell metabolism from time series kinetics, fluxomics, and/or transcriptomics observations.
+    It relies on the <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022519301924051?via%3Dihub"><em>regulatory Flux Balance Analysis</em></a> to ensure compatibility between inferred regulatory rules and the observations.
+  links:
+    git: "https://github.com/bioasp/merrin"
+
+# ==============================================================================
+# Benchmarks
+# ==============================================================================
+- tag: Benchmarks
+  name: Benchmarks of Optimization Modulo Quantified Linear Arithmetics
+  description: >
+    First benchmark of Optimization Modulo Quantified Linear Arithmetics problems.
+    Instances are inspired by an inverse problem in bioinformatics: the inference of regulatory rules controlling the metabolism.
+    Each instance is associated with an equivalent quantifier-free problem.
+    </br> This benchmark has been used to validate <code>merrinasp</code>.
+  links:
+    zenodo: "https://zenodo.org/records/10361533"
+
+# ==============================================================================
+# Models
+# ==============================================================================
+- tag: Biological Models
+  name: Regulated Metabolic Models of <em>E. coli</em>
+  description: >
+    Set of 3 regulated metabolic networks of <em>E. coli</em> at small, medium, and large scales.
+    Each model has been reconstructed according to their description in the literature.
+    They are implemented in <code>SBML</code> (metabolic network) and <code>SBML-qual</code> / <code>bnet</code> (regulatory network) format.
+    </br> These models have been used to validate <code>merrin</code>.
+  links:
+    git: "https://github.com/kthuillier/regulated-metabolic-models"

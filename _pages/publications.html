@@ -5,32 +5,92 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% assign pubs = site.data.publications %}
+{% if pubs == nil %}
+  {% assign pubs = "" | split: "" %}
 {% endif %}
 
-{% include base_path %}
+{% assign pubs_by_year = pubs | group_by: "year" %}
+{% assign pubs_by_year = pubs_by_year | sort: "name" | reverse %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+{% for year in pubs_by_year %}
+<h2>{{ year.name }}</h2>
 
+{% assign year_pubs = year.items | sort: "title" %}
+{% assign year_pubs = year_pubs | sort: "month" | reverse %}
+
+<ul class="publications">
+{% for pub in year_pubs %}
+<li class="publication">
+
+  <p>
+    <strong class="tag">[{{ pub.tag }}]</strong>
+    {{ pub.authors }},
+    <strong>{{ pub.title }}</strong>,
+    <em>{{ pub.venue }}</em>,
+    {% if pub.extended_data %} {{ pub.extended_data }},{% endif %}
+    {{ pub.year }}.
+
+    {% capture pub_links %}{% endcapture %}
+
+    {% if pub.doi %}
+      {% capture pub_links %}{{ pub_links }}<a href="https://doi.org/{{ pub.doi }}" class="doi-link">DOI</a>, {% endcapture %}
+    {% endif %}
+    {% if pub.links and pub.links.bib %}
+      {% capture pub_links %}{{ pub_links }}<a href="{{ pub.links.bib }}"><img alt="BibTex" src="https://haltools.archives-ouvertes.fr/images/Haltools_bibtex3.png" border="0" title="BibTex"></a> , {% endcapture %}
+    {% endif %}
+    {% if pub.links and pub.links.pdf %}
+      {% capture pub_links %}{{ pub_links }}<a href="{{ pub.links.pdf }}" class="pdf-link"><i class="fa-solid fa-file-pdf"></i></a>, {% endcapture %}
+    {% endif %}
+    {% if pub.links and pub.links.git %}
+      {% capture pub_links %}{{ pub_links }}<a href="{{ pub.links.git }}" class="git-link"><i class="fa-brands fa-github"></i></a>, {% endcapture %}
+    {% endif %}
+    {% if pub.links and pub.links.slides %}
+      {% capture pub_links %}{{ pub_links }}<a href="{{ pub.links.slides }}" class="doi-link">Slides</a>, {% endcapture %}
+    {% endif %}
+
+    {% assign pub_links = pub_links | strip %}
+    {% if pub_links != "" %}
+      {% assign links_len = pub_links | size | minus: 1 %}
+      <strong>[ {{ pub_links | slice: 0, links_len }} ]</strong>
+    {% endif %}
+  </p>
+
+  {% if pub.abstract %}
+  <details class="show-abstract">
+    <summary>Abstract</summary>
+    <p>{{ pub.abstract }}</p>
+  </details>
+  {% endif %}
+
+  {% if pub.presentation %}
+  <p class="publication-presentation">
+    Presented during <strong class="tag">{{ pub.presentation.name }}</strong>, <em>{{ pub.presentation.place }}</em>.
+    
+    {% capture pres_links %}{% endcapture %}
+
+    {% if pub.presentation.links and pub.presentation.links.slide %}
+      {% capture pres_links %}{{ pres_links }}<a href="{{ pub.presentation.links.slide }}" class="tag">Slides</a>, {% endcapture %}
+    {% endif %}
+    {% if pub.presentation.links and pub.presentation.links.video %}
+      {% capture pres_links %}{{ pres_links }}<a href="{{ pub.presentation.links.video }}" class="tag">Video</a>, {% endcapture %}
+    {% endif %}
+    {% if pub.presentation.links and pub.presentation.links.poster %}
+      {% capture pres_links %}{{ pres_links }}<a href="{{ pub.presentation.links.poster }}" class="tag">Poster</a>, {% endcapture %}
+    {% endif %}
+
+    {% assign pres_links = pres_links | strip %}
+    {% if pres_links != "" %}
+      {% assign links_len = pres_links | size | minus: 1 %}
+      <strong>[ {{ pres_links | slice: 0, links_len }} ]</strong>
+    {% endif %}
+  </p>
+  {% endif %}
+
+</li>
+{% endfor %}
+</ul>
+<hr>
+{% endfor %}
 
 

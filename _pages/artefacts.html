@@ -1,0 +1,55 @@
+---
+layout: archive
+title: "Software and Resources"
+permalink: /software-and-resources/
+author_profile: true
+---
+
+{% assign artefacts = site.data.artefacts %}
+{% if artefacts == nil %}
+  {% assign artefacts = "" | split: "" %}
+{% endif %}
+
+{% assign tag_order = "Software,Benchmarks,Biological Models" | split: "," %}
+
+{% for tag_name in tag_order %}
+  {% assign artefacts_group = artefacts | where: "tag", tag_name %}
+  {% if artefacts_group.size > 0 %}
+    <h2>{{ tag_name }}</h2>
+
+    <!-- <ul class="artefacts"> -->
+    {% for artefact in artefacts_group %}
+      <div class="artefact">
+        {% capture artefact_links %}{% endcapture %}
+        {% if artefact.links and artefact.links.git %}
+          {% capture artefact_links %}{{ artefact_links }}<a href="{{ artefact.links.git }}" class="git-link tag"><i class="fa-brands fa-github"></i></a>, {% endcapture %}
+        {% endif %}
+        {% if artefact.links and artefact.links.zenodo %}
+          {% capture artefact_links %}{{ artefact_links }}<a href="{{ artefact.links.zenodo }}" class="doi-link"><strong>[Zenodo]</strong></a>, {% endcapture %}
+        {% endif %}
+        {% if artefact.links and artefact.links.pdf %}
+          {% capture artefact_links %}{{ artefact_links }}<a href="{{ artefact.links.pdf }}" class="pdf-link tag"><i class="fa-solid fa-file-pdf"></i></a>, {% endcapture %}
+        {% endif %}
+
+        <p>
+          <!-- <strong style="font-family: monospace;">[{{ artefact.tag }}]</strong> -->
+          <strong>{{ artefact.name }}</strong>
+          {% assign artefact_links = artefact_links | strip %}
+          {% if artefact_links != "" %}
+            {% assign links_len = artefact_links | size | minus: 1 %}
+            - {{ artefact_links | slice: 0, links_len }}
+          {% endif %}
+        </p>
+
+        {% if artefact.description %}
+          <p class="artefact-description">
+            {{ artefact.description }}
+          </p>
+        {% endif %}
+
+        </div>
+        {% endfor %}
+    <hr>
+    <!-- </ul> -->
+  {% endif %}
+{% endfor %}

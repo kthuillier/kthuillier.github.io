@@ -5,12 +5,62 @@ permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
+{% assign talks = site.data.talks %}
+{% if talks == nil %}
+  {% assign talks = "" | split: "" %}
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% assign talks_by_year = talks | group_by: "year" %}
+{% assign talks_by_year = talks_by_year | sort: "name" | reverse %}
+
+{% for year in talks_by_year %}
+<h2>{{ year.name }}</h2>
+
+{% assign year_talks = year.items | sort: "title" %}
+{% assign year_talks = year_talks | sort: "month" | reverse %}
+
+<ul class="publications">
+{% for talk in year_talks %}
+<li class="publication">
+  <p style="margin-bottom: 0em;">
+    <strong class="tag">[{{ talk.tag }}]</strong>
+    {% if talk.title %}<strong>{{ talk.title }}</strong>,{% endif %}
+    {% if talk.venue %}<em>{{ talk.venue }}</em>,{% endif %}
+    {{ talk.date }}.
+  
+    {% capture talk_links %}{% endcapture %}
+
+    {% if talk.links and talk.links.pdf %}
+      {% capture talk_links %}{{ talk_links }}<a href="{{ talk.links.pdf }}" class="tag">Abstract</a>, {% endcapture %}
+    {% endif %}
+    {% if talk.links and talk.links.slide %}
+      {% capture talk_links %}{{ talk_links }}<a href="{{ talk.links.slide }}" class="tag">Slides</a>, {% endcapture %}
+    {% endif %}
+    {% if talk.links and talk.links.video %}
+      {% capture talk_links %}{{ talk_links }}<a href="{{ talk.links.video }}" class="tag">Video</a>, {% endcapture %}
+    {% endif %}
+
+    {% assign talk_links = talk_links | strip %}
+    {% if talk_links != "" %}
+      {% assign links_len = talk_links | size | minus: 1 %}
+      <strong>[ {{ talk_links | slice: 0, links_len }} ]</strong>
+    {% endif %}
+  </p>
+  <p style="margin-top: 0em;">
+    <em>{{ talk.place }}</em> -
+    <i class="fa fa-clock page__meta" aria-hidden="true" style="margin-bottom: 0em; margin-top: 0em"></i> {{ talk.duration }}.
+  </p>
+
+  {% if talk.abstract %}
+  <details class="show-abstract">
+    <summary>Abstract</summary>
+    <p>{{ talk.abstract }}</p>
+  </details>
+  {% endif %}
+
+</li>
+{% endfor %}
+</ul>
+<hr>
 {% endfor %}

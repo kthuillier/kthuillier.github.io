@@ -47,12 +47,12 @@ Background
   This work combined deep neural networks with formal constraints to ensure consistency, interpretability, and robustness.
 </p>
 
-Offers
-======
+Offers 2027
+===========
 
 <p class="profile-text" markdown=1>
-  **[2027, 6-month internship, M2 student]** AI agents and logical reasoning for the correction of regulated metabolic models (<a href="files/offers/2027/2027_internship_M2_RefiningEColiRegulatoryNetworks_EN.pdf" class="pdf-link"><i class="fa-solid fa-file-pdf">English</i></a>, <a href="files/offers/2027/2027_internship_M2_RefiningEColiRegulatoryNetworks_FR.pdf" class="pdf-link"><i class="fa-solid fa-file-pdf">French</i></a>)\\  
-  *Keywords:* Systems biology, answer set programming (ASP), hybrid dynamical systems, attractors, model repair, AI agent.\\  
-  *Supervision:* A. Siegel (IRISA, [anne.siegel@irisa.fr](mailto:anne.siegel@irisa.fr)), K. Thuillier (LMF, [kerian.thuillier@lmf.cnrs.fr](mailto:kerian.thuillier@lmf.cnrs.fr)), in collaboration with L. Paulevé (LaBRI).\\  
+  **[6-month internship, M2 student]** AI agents and logical reasoning for the correction of regulated metabolic models (<a href="files/offers/2027/2027_internship_M2_RefiningEColiRegulatoryNetworks_EN.pdf" class="pdf-link"><i class="fa-solid fa-file-pdf"></i>EN</a>, <a href="files/offers/2027/2027_internship_M2_RefiningEColiRegulatoryNetworks_FR.pdf" class="pdf-link"><i class="fa-solid fa-file-pdf"></i>FR</a>)  
+  *Keywords:* Systems biology, answer set programming (ASP), hybrid dynamical systems, attractors, model repair, AI agent.  
+  *Supervision:* A. Siegel (IRISA, [anne.siegel@irisa.fr](mailto:anne.siegel@irisa.fr)), K. Thuillier (LMF, [kerian.thuillier@lmf.cnrs.fr](mailto:kerian.thuillier@lmf.cnrs.fr)), in collaboration with L. Paulevé (LaBRI).  
   *Localisation:* IRISA (Rennes) or LMF (Gif-sur-Yvette), at the student's choice.
 </p>
